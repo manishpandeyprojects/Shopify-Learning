@@ -1,0 +1,138 @@
+{
+  "sections": {
+    "e1dc4479-6958-4eed-84ca-16da9ecb2740": {
+      "type": "slideshow",
+      "blocks": {
+        "template--15038994546793__e1dc4479-6958-4eed-84ca-16da9ecb2740-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gallery-dept-clothing-banner.webp",
+            "heading": "Express Yourself in Every Stitch",
+            "heading_size": "h1",
+            "subheading": "Wear Your Story, Speak Your Style.",
+            "button_label": "Explore More",
+            "link": "shopify:\/\/collections",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "template--15038994546793__e1dc4479-6958-4eed-84ca-16da9ecb2740-slide-2": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/baby-romper-banner.webp",
+            "heading": "Pure Comfort for Little Ones",
+            "heading_size": "h1",
+            "subheading": "A world of softness and sweetness for your little bundle of joy.",
+            "button_label": "Explore More",
+            "link": "shopify:\/\/collections",
+            "button_style_secondary": false,
+            "box_align": "middle-right",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--15038994546793__e1dc4479-6958-4eed-84ca-16da9ecb2740-slide-1",
+        "template--15038994546793__e1dc4479-6958-4eed-84ca-16da9ecb2740-slide-2"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "small",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "d48521de-2403-47e2-9b1f-c7d3757f0ccb": {
+      "type": "collection-list",
+      "blocks": {
+        "template--15038994546793__d48521de-2403-47e2-9b1f-c7d3757f0ccb-featured_collection-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "template--15038994546793__d48521de-2403-47e2-9b1f-c7d3757f0ccb-featured_collection-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "testing"
+          }
+        },
+        "template--15038994546793__d48521de-2403-47e2-9b1f-c7d3757f0ccb-featured_collection-3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "testing-2"
+          }
+        }
+      },
+      "block_order": [
+        "template--15038994546793__d48521de-2403-47e2-9b1f-c7d3757f0ccb-featured_collection-1",
+        "template--15038994546793__d48521de-2403-47e2-9b1f-c7d3757f0ccb-featured_collection-2",
+        "template--15038994546793__d48521de-2403-47e2-9b1f-c7d3757f0ccb-featured_collection-3"
+      ],
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "f1fcec87-31db-48d7-b084-c7f2a87c262e": {
+      "type": "recently-viewed",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "e1dc4479-6958-4eed-84ca-16da9ecb2740",
+    "featured_collection",
+    "d48521de-2403-47e2-9b1f-c7d3757f0ccb",
+    "f1fcec87-31db-48d7-b084-c7f2a87c262e"
+  ]
+}
