@@ -1,0 +1,176 @@
+<h3>String Filters</h3>
+
+{% assign products = collection.products %}
+{% assign productTitles = products | map: 'title' |  reverse %}
+
+{% for productTitle in productTitles %}
+    <p>{{productTitle}}</p>
+{% endfor %}
+
+<p>{{productTitles |  join: ' - ' }}</p>
+
+<p>First Product: {{productTitles.first}}</p>
+<p>Last Product: {{productTitles.last}}</p>
+<p>Product Array Size: {{productTitles.size}}</p>
+
+
+
+{% assign languageArr = "html|orange, css|red, javascript|blue" |  split: ',' %}
+{% for lang in languageArr %}
+    {% assign langName =  lang | split: "|" | first %}
+    {% assign langColor =  lang | split: "|" | last %}
+    <p style="color: {{langColor}}">{{langName}}</p>
+{% endfor %}
+
+
+{% assign myhtmlText1 = " Hello this is dummy text  " %}
+{{myhtmlText1 | strip |  append: '!'}}
+
+{% assign myhtmlText = "<p style='color: red'>Hello this is dummy text </p>" %}
+{{myhtmlText}}
+{% comment %} {{myhtmlText}} {% endcomment %}
+
+{% assign longText = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt necessitatibus assumenda inventore quos similique ex at, quo quod esse harum dolores accusamus veritatis impedit soluta tenetur unde quibusdam magni laboriosam!" %}
+
+{{longText |  truncate: 80 }}
+<br />
+{{longText | truncatewords: 5 }}
+
+<p>{{ 'one two three' | base64_encode }}</p>
+<p>{{ 'b25lIHR3byB0aHJlZQ==' | base64_decode }}</p>
+
+<h3>Filters</h3>
+{% assign myNumber = '10' %}
+
+{% assign myNewNumber = myNumber | plus: 0 %}
+
+<p> My Number string to number plus : {{ myNewNumber }}</p>
+
+{% if myNewNumber > 5 %}
+  <p>My Number is greater than 5</p>
+{% endif %}
+
+{% assign moduleOfMyNumber = myNewNumber | modulo: 2 %}
+
+{% if moduleOfMyNumber == 0 %}
+  <p>Even</p>
+{% else %}
+  <p>Odd</p>
+{% endif %}
+
+{% assign myAbsNumber = -22 | abs %}
+<p>My Abs number is : {{myAbsNumber}}</p>
+
+
+{% assign myRoundNumber = 10.2 | round %}
+<p> My Round Number is : {{myRoundNumber}}</p>
+
+{% assign myCappedValue = 60 %}
+<p> My Capped Value is at least 90 :  {{myCappedValue | at_least: 90 }}</p>
+
+{% assign myCappedValue2 = 100 %}
+<p>My Capped Value is at most 80 : {{myCappedValue2 | at_most: 80 }}</p>
+
+<h3>Operators</h3>
+{% paginate collection.products by 3 %}
+  {% for product in collection.products %}
+    <p>{{ product.title }}</p>
+  {% endfor %}
+  {{ paginate | default_pagination }}
+{% endpaginate %}
+
+<br>
+
+{% assign var1 = 'Hello World' %}
+
+{{ var1 }}
+
+<br>
+
+{% assign num1 = 45 %}
+{% assign num2 = 45 %}
+
+{% if num1 > num2 %}
+  The num1 is greater than a num2 <br>
+{% else %}
+  The num2 is greater than a num1<br>
+{% endif %}
+
+<br>
+
+{{ product.title }}
+<br>
+{{ product.price | money }}
+<br>
+
+<br>
+
+{% if product.tags contains 'Sample Product' %}
+  This product has a Sample Product tags
+{% endif %}
+
+<br>
+
+{% comment %}
+  THis is comment in liquid
+{% endcomment %}
+
+// Array <br>
+{%- assign example_array = 'value1, value2, value3' | split: ', ' -%}
+
+{% for eng in example_array %}
+  {{ eng }}
+  <br>
+{% endfor %}
+<br>
+{{ example_array }}
+
+{% assign fruits = 'apples, oranges' | split: ', ' %}
+{% assign vegetables = 'broccoli, carrots' | split: ', ' %}
+{% assign plants = fruits | concat: vegetables %}
+<br>
+{{ plants | join: ', ' }}
+
+<br>
+<br>
+
+{% unless num1 <= num2 %}
+  <p>Num2 is greater than Num1</p>
+{% else %}
+  <p>Num1 is greater than num 2</p>
+{% endunless %}
+
+<br>
+
+{% if product.price > 60000 %}
+  <p>This is a affordable product</p>
+{% else %}
+  The product price is greater than 600
+{% endif %}
+
+<br>
+
+{% for product in collection.products limit: 5 offset: 0 %}
+  <p
+    style="
+      {% if forloop.first %}
+      color: green
+      {% elsif forloop.last %}
+      color: orange
+      {% endif %}
+    "
+  >
+    {{ forloop.index }} - {{ product.title }}
+  </p>
+
+  {% if product.tags.size > 0 %}
+    <h3>Tags:</h3>
+    <ul>
+      {% for tag in product.tags %}
+        <li>{{ tag }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p style="color: red">There is tags available for this product.</p>
+  {% endif %}
+{% endfor %}
